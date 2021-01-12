@@ -11,12 +11,14 @@ p = 0
 ln = 1
 
 for i in range(0, 50000000 if part2 else 2017):
-	p = (p + input + 1) % ln
+	i += 1
+	p = (p + input) % ln
+	p = p + 1
 	if part2:
-		if p == 0:
-			r = i+1
+		if p == 1:
+			r = i
 	else:
-		lst.insert(p, i+1)
+		lst.insert(p, i)
 	ln += 1
 
 if not part2:
